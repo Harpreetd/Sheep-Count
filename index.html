@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Count to sleep</title>
+  </head>
+  <body>
+    <h1 id="sheep-text"></h1>
+    <div id="sheep-image"></div>
+    <script>
+      let totalNumberOfSheep = 0;
+      let userAnswer = prompt("Start counting sheep? yes/no");
+      while (userAnswer != "no") {
+        if (userAnswer == "yes") {
+          totalNumberOfSheep = totalNumberOfSheep + 1;
+          userAnswer = prompt(
+            `Do you want to continue counting? yes/no ! Total Counts = ${totalNumberOfSheep}`
+          );
+        } else {
+          userAnswer = prompt("Do you want to continue ? yes/no");
+        }
+      }
+
+      let sheepImage = document.getElementById("sheep-image");
+      let sheepText = document.getElementById("sheep-text");
+      if (userAnswer == "no") {
+        for (var i = 0; i < totalNumberOfSheep; i++) {
+          sheepText.innerHTML = `total number of sheep you counted : ${totalNumberOfSheep}`;
+          sheepImage.innerHTML += `<img src="sheep.png">`;
+        }
+      }
+    </script>
+  </body>
+</html>
